@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Password Checker</string>
+    <string name="check_pwd">Check Passwords</string>
 </resources>
