@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     // Declare EditText object for displaying numbers
     private EditText editTextNumberDisplay;
 
+    // Declare Button object for clear
+    private Button btnClear;
+
     // Declare Button objects for numbers
     private Button btn0;
     private Button btn1;
@@ -57,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         editTextNumberDisplay = (EditText) findViewById(R.id.editTextNumberDisplay);
 
         // Define all the Button objects
+        btnClear = (Button) findViewById(R.id.btnClear);
+
         btn0 = (Button) findViewById(R.id.btn0);
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -82,10 +87,21 @@ public class MainActivity extends AppCompatActivity {
         editTextNumberDisplay.addTextChangedListener(tch);
 
         // Event handlers for the buttons
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Reset calculator
+                clearClickSequence();
+            }
+        });
+
         btn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // would like to add some parsing logic for removing leading zeros
+
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
 
                 numDisplay += 0;
                 editTextNumberDisplay.setText(numDisplay);
@@ -97,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 1;
                 editTextNumberDisplay.setText(numDisplay);
@@ -106,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 2;
                 editTextNumberDisplay.setText(numDisplay);
@@ -115,6 +137,9 @@ public class MainActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 3;
                 editTextNumberDisplay.setText(numDisplay);
@@ -124,6 +149,9 @@ public class MainActivity extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 4;
                 editTextNumberDisplay.setText(numDisplay);
@@ -133,6 +161,9 @@ public class MainActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 5;
                 editTextNumberDisplay.setText(numDisplay);
@@ -142,6 +173,9 @@ public class MainActivity extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 6;
                 editTextNumberDisplay.setText(numDisplay);
@@ -151,6 +185,9 @@ public class MainActivity extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 7;
                 editTextNumberDisplay.setText(numDisplay);
@@ -160,6 +197,9 @@ public class MainActivity extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 8;
                 editTextNumberDisplay.setText(numDisplay);
@@ -169,6 +209,9 @@ public class MainActivity extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Check if computation recently completed
+                didCalcRecentlyComplete();
+
                 // concatenate numbers entered
                 numDisplay += 9;
                 editTextNumberDisplay.setText(numDisplay);
@@ -178,94 +221,70 @@ public class MainActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Set operator
-                simpleCalc.setOperator("+");
-
-                // Set operand1
-                simpleCalc.setOperand1(Float.parseFloat(numDisplay));
-
-                // Clear current value of numDisplay
-                numDisplay = "";
+                // Process operator
+                operatorClickSequence("+");
             }
         });
 
         btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Set operator
-                simpleCalc.setOperator("-");
-
-                // Set operand1
-                simpleCalc.setOperand1(Float.parseFloat(numDisplay));
-
-                // Clear current value of numDisplay
-                numDisplay = "";
+                // Process operator
+                operatorClickSequence("-");
             }
         });
 
         btnMul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Set operator
-                simpleCalc.setOperator("*");
-
-                // Set operand1
-                simpleCalc.setOperand1(Float.parseFloat(numDisplay));
-
-                // Clear current value of numDisplay
-                numDisplay = "";
+                // Process operator
+                operatorClickSequence("*");
             }
         });
 
         btnDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Set operator
-                simpleCalc.setOperator("/");
-
-                // Set operand1
-                simpleCalc.setOperand1(Float.parseFloat(numDisplay));
-
-                // Clear current value of numDisplay
-                numDisplay = "";
+                // Process operator
+                operatorClickSequence("/");
             }
         });
 
-        // crashing on sqrt
         btnSqrt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Set operator
-                simpleCalc.setOperator("sqrt");
-
-                // Set operand1
-                simpleCalc.setOperand1(Float.parseFloat(numDisplay));
-
-                // Clear current value of numDisplay
-                numDisplay = "";
+                // Process operator
+                operatorClickSequence("sqrt");
             }
         });
 
         btnEquals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Process equals click
+                equalsClickSequence();
+            }
+        });
 
-                // Set operand2
-                if (simpleCalc.getOperator() != "sqrt"){
-                    simpleCalc.setOperand2(Float.parseFloat(numDisplay));
+        btnDeciPoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String currentDisplay = editTextNumberDisplay.getText().toString();
+
+                if (simpleCalc.isOperatorSet()){
+                    numDisplay = ".";
+
+                    // Display new decimal number for operand2
+                    editTextNumberDisplay.setText(numDisplay);
                 }
 
+                // Check if current display number does not have a decimal point
+                else if (!currentDisplay.contains(".")){
+                    numDisplay = currentDisplay + ".";
 
-                // do calculation
-                simpleCalc.calculate();
-
-                // get result from calculator object
-                float result = simpleCalc.getResult();
-
-                simpleCalc.resetCalculator();
-
-                // display result
-                editTextNumberDisplay.setText(Float.toString(result));
+                    // Display number with added decimal point
+                    editTextNumberDisplay.setText(numDisplay);
+                }
             }
         });
 
@@ -283,5 +302,118 @@ public class MainActivity extends AppCompatActivity {
         public void onTextChanged ( CharSequence s, int before, int count, int after) {
 
         }
+    }
+
+    private void didCalcRecentlyComplete(){
+
+        if (simpleCalc.isCalcDone()){
+            // reset the numDisplay so that new number can be assigned to operand1
+            numDisplay = "";
+
+            // reset the calcDone attribute so that new calculation can take place
+            simpleCalc.setCalcDone(false);
+
+            // reset calculator object
+            simpleCalc.resetCalculator();
+        }
+
+    }
+
+    private void operatorClickSequence(String operator){
+        // Parse operator
+        switch (operator){
+            case "+":
+                simpleCalc.setOperator("+");
+                break;
+
+            case "-":
+                simpleCalc.setOperator("-");
+                break;
+
+            case "*":
+                simpleCalc.setOperator("*");
+                break;
+
+            case "/":
+                simpleCalc.setOperator("/");
+                break;
+
+            case "sqrt":
+                simpleCalc.setOperator("sqrt");
+                break;
+
+            default:
+                // Invalid operator passed
+                simpleCalc.resetCalculator();
+        }
+
+        // Clear status of previous calculation
+        simpleCalc.setCalcDone(false);
+
+        // Set operand1
+        numDisplay = editTextNumberDisplay.getText().toString();
+        simpleCalc.setOperand1(Float.parseFloat(numDisplay));
+
+        // Clear current value of numDisplay so that operand2 can be set next
+        numDisplay = "";
+
+    }
+
+    private void equalsClickSequence(){
+        // Set operand2
+        if (simpleCalc.getOperator() != "sqrt"){
+            simpleCalc.setOperand2(Float.parseFloat(numDisplay));
+        }
+
+        try {
+            String operator = simpleCalc.getOperator();
+
+            // Check for DivideByZero
+            if (operator.equals("/")){
+                float operand2 = simpleCalc.getOperand2();
+
+                // Set boolean expression to check for DivideByZero
+                boolean divideByZero = (operand2 == 0);
+
+                if (divideByZero){
+                    editTextNumberDisplay.setText("CANNOT DIVIDE BY ZERO!");
+
+                    return;
+                }
+            }
+
+            // Check for negative roots
+            if (operator.equals("sqrt") && simpleCalc.getOperand1() < 0)
+            {
+                editTextNumberDisplay.setText("NO NEGATIVE ROOTS!");
+
+                return;
+            }
+
+            // do calculation
+            simpleCalc.calculate();
+
+            // get result from calculator object
+            float result = simpleCalc.getResult();
+
+            // display result
+            editTextNumberDisplay.setText(Float.toString(result));
+
+            // Reset calculator
+            simpleCalc.resetCalculator();
+
+
+        }
+        catch (Exception e){
+            editTextNumberDisplay.setText("EXCEPTION CAUGHT " + e.getMessage());
+        }
+    }
+
+    private void clearClickSequence(){
+        // Reset calculator
+        simpleCalc.resetCalculator();
+        simpleCalc.setCalcDone(false);
+        numDisplay = "";
+        editTextNumberDisplay.setText(numDisplay);
     }
 }
