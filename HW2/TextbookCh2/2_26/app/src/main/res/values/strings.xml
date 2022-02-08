@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Email Validator</string>
+    <string name="validateEmail">Validate Email</string>
+</resources>
