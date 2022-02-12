@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">W3_P2</string>
+    <string name="sayHello">Click Me to Say Hello</string>
+</resources>
