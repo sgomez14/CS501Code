@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="2dp">
+
+        <TextView
+            android:id="@+id/tvCelsius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/celsius"
+            android:textSize="48sp" />
+
+        <SeekBar
+            android:id="@+id/skbCelsius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dip"
+            android:max="100"
+            android:paddingTop="50dip"
+            android:paddingBottom="50dip"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tvResultC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/zerDecimal"
+            android:textAlignment="center"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/tvFahrenheit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/fahrenheit"
+            android:textSize="48sp" />
+
+        <SeekBar
+            android:id="@+id/skbFahrenheit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dip"
+            android:max="212"
+            android:paddingTop="50dip"
+            android:paddingBottom="50dip"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tvResultF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/thirtyTwoDeci"
+            android:textAlignment="center"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/tvMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dip"
+            android:text="@string/interestingMsg"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

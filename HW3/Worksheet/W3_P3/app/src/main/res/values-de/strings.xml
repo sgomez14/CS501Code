@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">W3_P3</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="zerDecimal">0.00</string>
+    <string name="thirtyTwoDeci">32.00</string>
+    <string name="interestingMsg">Interessante Nachricht</string>
+    <string name="msgWarmer">Ich wünschte, die Temperatur wäre wärmer.</string>
+    <string name="msgColder">Ich wünschte, die Temperatur wäre kälter.</string>
+</resources>
