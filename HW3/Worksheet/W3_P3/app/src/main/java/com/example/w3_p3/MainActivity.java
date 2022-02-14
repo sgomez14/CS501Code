@@ -41,10 +41,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b)
             {
+                // get value of seekbar and display it
                 tvResultC.setText(String.valueOf(progress));
 
+                // convert C to F
                 Double conversion = convertTemp((double) progress, "c");
 
+                // set seekbar for F
                 skbFahrenheit.setProgress(conversion.intValue());
 
                 String msg;
@@ -68,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar)
             {
+                // set message when changed by the F seekbar
+
                 int progress = seekBar.getProgress();
 
                 String msg;
@@ -90,15 +95,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b)
             {
+                // checking that seekbar does not go below 32
                 if (progress <= 32)
                 {
                     progress = 32;
                 }
 
+                // get value of seekbar and display it
                 tvResultF.setText(String.valueOf(progress));
 
+                // convert F to C
                 Double conversion = convertTemp((double) progress, "f");
 
+                // set seekbar for C
                 skbCelsius.setProgress(conversion.intValue());
 
                 String msg;
@@ -131,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                     skbFahrenheit.setProgress(progress);
                 }
 
-
+                // set message when changed by the C seekbar
                 String msg;
                 if (progress <= 68)
                 {

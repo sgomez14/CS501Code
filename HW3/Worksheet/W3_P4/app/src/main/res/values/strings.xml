@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">W3_P4</string>
+    <string name="loginName">Flashcard Login</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="submit">submit</string>
+    <string name="generate">Generate 10 Random Problems</string>
+    <string name="add">+</string>
+    <string name="sub">-</string>
+    <string name="yourAnswer">Your Answer</string>
+</resources>
