@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">W4_P2</string>
+    <string name="euro">€</string>
+    <string name="yen">¥</string>
+    <string name="cad">CAD</string>
+    <string name="usd">USD</string>
+    <string name="dollar_sign">$</string>
+    <string name="enter_USD">Enter USD</string>
+</resources>

@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity implements
 
     // Declare all GUI elements
     private LinearLayout LLMain;
+    private LinearLayout LLFlash;
     private ViewGroup.LayoutParams LLParams;
+    private LinearLayout.LayoutParams LLFlashParams;
     private EditText edtAction;
     private TextView tvAction;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -49,27 +51,36 @@ public class MainActivity extends AppCompatActivity implements
 
 
         // 1: create the Views
-        EditText edtAction = new EditText(MainActivity.this); // getApplicationContext()
-        TextView tvAction = new TextView(MainActivity.this);
-        Switch switchOnOff = new Switch(MainActivity.this);
+        edtAction = new EditText(MainActivity.this); // getApplicationContext()
+        tvAction = new TextView(MainActivity.this);
+        switchOnOff = new Switch(MainActivity.this);
 
         // 2: Set Layout Parameters for Views
-//        LLMain = (LinearLayout)  findViewById(R.id.LLMain); // This one exists because we gave layout ID in activity_main.xml
         LLMain = new LinearLayout(MainActivity.this);
         LLParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         LLMain.setLayoutParams(LLParams);
         LLMain.setOrientation(LinearLayout.VERTICAL);
+
+
+        LLFlashParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        LLFlash = new LinearLayout(MainActivity.this);
+        LLFlash.setLayoutParams(LLFlashParams);
+        LLFlash.setOrientation(LinearLayout.HORIZONTAL);
+
 //        switchOnOff.setLayoutParams(LLParams);
-        switchOnOff.setGravity(Gravity.CENTER);
-        tvAction.setLayoutParams(LLParams);
+        switchOnOff.setGravity(Gravity.LEFT);
+//        tvAction.setLayoutParams(LLParams);
         tvAction.setText("Flashlight");
         tvAction.setTextSize(20);
-        edtAction.setLayoutParams(LLParams);
+//        edtAction.setLayoutParams(LLParams);
         edtAction.setHint("Enter Action");
+        edtAction.setHeight(1000);
+        edtAction.setGravity(Gravity.BOTTOM);
 
         // 3: Place Views in a ViewGroup
-        LLMain.addView(tvAction);
-        LLMain.addView(switchOnOff);
+        LLFlash.addView(tvAction);
+        LLFlash.addView(switchOnOff);
+        LLMain.addView(LLFlash);
         LLMain.addView(edtAction);
 
         // 4: set content view
@@ -98,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements
                 if(b){
                     try{
                         cameraManager.setTorchMode("0", true);
+                        edtAction.setText("on");
 
                     }catch(CameraAccessException e){
 
@@ -105,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements
                 }else{
                     try{
                         cameraManager.setTorchMode("0", false);
+                        edtAction.setText("off");
 
                     }catch(CameraAccessException e){
 
@@ -181,34 +194,65 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+    public boolean onFling(MotionEvent startEvent, MotionEvent endEvent,
+                           float velocityX, float velocityY) {
         Log.d("flash", "detected fling event");
 
-        if (this.switchOnOff == null){
-            try {
-                throw new Exception("Got switchOnOff is null");
-            } catch (Exception e) {
-                e.printStackTrace();
+
+        boolean result = false;
+        final double SWIPE_THRESHOLD = 100;
+        final double SWIPE_VELOCITY_THRESHOLD = 100;
+        double deltaY = endEvent.getY() - startEvent.getY();
+        double deltaX = endEvent.getX() - startEvent.getX();
+
+        // which was greater? movement across Y or X?
+        if (Math.abs(deltaX) > Math.abs(deltaY)){
+            // right or left swipe
+            if (Math.abs(deltaX) > SWIPE_THRESHOLD &&
+                    Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD){
+                if (deltaX > 0){
+                    onSwipeRight();
+                    result = true;
+                }
+                else{
+                    onSwipeLeft();
+                    result = true;
+                }
             }
         }
-        else {
-            this.switchOnOff.toggle();
+        else{
+            // up or down swipe
+            if (Math.abs(deltaY) > SWIPE_THRESHOLD &&
+                    Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD){
+                if (deltaY > 0){
+                    onSwipeDown();
+                    result = true;
+                }
+                else{
+                    onSwipeUp();
+                    result = true;
+                }
+            }
         }
 
-
-//        CameraManager cameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
-//
-//        try{
-//            cameraManager.setTorchMode("0", true);
-//
-//        }catch(CameraAccessException e){}
-//
-//
-        return true;
+        return result;
     }
 
+    private void onSwipeUp() {
+        switchOnOff.setChecked(true);
+        edtAction.setText("on");
+    }
 
+    private void onSwipeDown() {
+        switchOnOff.setChecked(false);
+        edtAction.setText("off");
+    }
 
+    private void onSwipeLeft() {
+    }
+
+    private void onSwipeRight() {
+    }
 
 
 }
