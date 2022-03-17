@@ -7,7 +7,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 ///////  Set of imports for Gesture Detection ////////
 import android.view.MotionEvent;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity
     private EditText edtDollar;
 
     // declare gesture detector
-    private GestureDetector GD;    //must instantiate the gesture detector
+    private GestureDetector GD;
 
     // define step size for gestures
     final private Double FLING_AMT = 1.0;
@@ -61,18 +60,8 @@ public class MainActivity extends AppCompatActivity
             public void afterTextChanged(Editable editable) {
                 String amount = edtDollar.getText().toString();
                 if (!amount.equals("")){
-//                    Double [] conversions = convertMoney(amount);
-//                    tvEuroAmount.setText(Double.toString(conversions[0]));
-//                    tvYenAmount.setText(Double.toString(conversions[1]));
-//                    tvCADAmount.setText(Double.toString(conversions[2]));
                     convertMoney(amount);
-
                 }
-                else{
-                    edtDollar.setText("0");
-                    convertMoney("0");
-                }
-
             }
         });
 
@@ -88,14 +77,9 @@ public class MainActivity extends AppCompatActivity
         double yen_amount = Math.round((yen_coefficient * usd_amount)*100.0)/100.0;
         double cad_amount = Math.round((cad_coefficient * usd_amount)*100.0)/100.0;
 
-//        edtDollar.setText(dollars);
         tvEuroAmount.setText(Double.toString(euro_amount));
         tvYenAmount.setText(Double.toString(yen_amount));
         tvCADAmount.setText(Double.toString(cad_amount));
-
-//        Double [] conversions = {euro_amount, yen_amount, cad_amount};
-//        return conversions;
-
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -105,7 +89,7 @@ public class MainActivity extends AppCompatActivity
         this.GD.onTouchEvent(event);               //Our GD will not automatically receive Android Framework Touch notifications.
         // Insert this line to consume the touch event locally by our GD,
         // IF YOU DON'T insert this before the return, our GD will not receive the event, and therefore won't do anything.
-        return super.onTouchEvent(event);          // Do this last, why?
+        return super.onTouchEvent(event);
     }
     //////////////////////////////////////////////////////////////////////////
 
@@ -127,8 +111,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onScroll(MotionEvent startEvent, MotionEvent endEvent, float velocityX, float velocityY) {
         boolean result = false;
-        final double SCROLL_THRESHOLD = 50;
-        final double SCROLL_VELOCITY_THRESHOLD = 50;
+        final double SCROLL_THRESHOLD = 50; // limit total amount of scroll
+        final double SCROLL_VELOCITY_THRESHOLD = 50; // set slow scroll
         double deltaY = endEvent.getY() - startEvent.getY();
         double deltaX = endEvent.getX() - startEvent.getX();
 
@@ -172,7 +156,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onFling(MotionEvent startEvent, MotionEvent endEvent, float velocityX, float velocityY) {
         boolean result = false;
         final double SWIPE_THRESHOLD = 500;
-        final double SWIPE_VELOCITY_THRESHOLD = 8000;
+        final double SWIPE_VELOCITY_THRESHOLD = 8000; // set fast swipe
         double deltaY = endEvent.getY() - startEvent.getY();
         double deltaX = endEvent.getX() - startEvent.getX();
 
@@ -208,102 +192,96 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void onSwipeDown() {
-//        Toast.makeText(this, "Swipe Down", Toast.LENGTH_SHORT).show();
-        String amount = edtDollar.getText().toString();
-
-        if (!amount.equals("")){
-            Double usd = Double.parseDouble(amount);
-            if (usd > 0){
-                usd -= FLING_AMT;
-                usd = Math.round((usd)*100.0)/100.0;
-                edtDollar.setText(Double.toString(usd));
-                convertMoney(Double.toString(usd));
-            }
-            else {
-                edtDollar.setText("0.0");
-                convertMoney("0");
-            }
-        }
-
-
+        decreaseDollar(FLING_AMT);
     }
 
     private void onSwipeUp() {
-//        Toast.makeText(this, "Swipe Up", Toast.LENGTH_SHORT).show();
-        String amount = edtDollar.getText().toString();
-
-        if (!amount.equals("")){
-            Double usd = Double.parseDouble(amount);
-            if (usd >= 0){
-                usd += FLING_AMT;
-                usd = Math.round((usd)*100.0)/100.0;
-                edtDollar.setText(Double.toString(usd));
-                convertMoney(Double.toString(usd));
-            }
-            else {
-                edtDollar.setText("0.0");
-                convertMoney("0");
-            }
-        }
-        else {
-            edtDollar.setText("1");
-            convertMoney("1");
-        }
+        increaseDollar(FLING_AMT);
     }
 
     private void onSwipeLeft() {
-        Toast.makeText(this, "Swipe Left", Toast.LENGTH_SHORT).show();
     }
 
     private void onSwipeRight() {
-        Toast.makeText(this, "Swipe Right", Toast.LENGTH_SHORT).show();
     }
 
     private void onScrollUp() {
-        String amount = edtDollar.getText().toString();
-
-        if (!amount.equals("")){
-            Double usd = Double.parseDouble(amount);
-            if (usd >= 0){
-                usd += SCROLL_AMT;
-                usd = Math.round((usd)*100.0)/100.0;
-                edtDollar.setText(Double.toString(usd));
-                convertMoney(Double.toString(usd));
-            }
-            else {
-                edtDollar.setText("0.0");
-                convertMoney("0");
-            }
-        }
-        else {
-            edtDollar.setText(".1");
-            convertMoney(".1");
-        }
+        increaseDollar(SCROLL_AMT);
 
     }
 
     private void onScrollDown() {
-        String amount = edtDollar.getText().toString();
-
-        if (!amount.equals("")){
-            Double usd = Double.parseDouble(amount);
-            if (usd > 0){
-                usd -= SCROLL_AMT;
-                usd = Math.round((usd)*100.0)/100.0;
-                edtDollar.setText(Double.toString(usd));
-                convertMoney(Double.toString(usd));
-            }
-            else {
-                edtDollar.setText("0.0");
-                convertMoney("0");
-            }
-        }
+        decreaseDollar(SCROLL_AMT);
     }
 
     private void onScrollLeft() {
     }
 
     private void onScrollRight() {
+    }
+
+    private void increaseDollar(Double increaseAmount){
+        // grab the current value in the edittext field
+        String amount = edtDollar.getText().toString();
+
+        // check if the edittext field is empty
+        if (!amount.equals("")){
+            // convert string to double
+            Double usd = Double.parseDouble(amount);
+            // checking if value is positive
+            if (usd >= 0){
+                // increase value
+                usd += increaseAmount;
+                usd = Math.round((usd)*100.0)/100.0;
+                // set the new dollar amount in the edittext
+                edtDollar.setText(Double.toString(usd));
+                // call conversion to update the other currencies
+                convertMoney(Double.toString(usd));
+            }
+            else {
+                // if the edittext field is negative, then set to zero
+                setDollarZero();
+            }
+        }
+        else {
+            // if the edittext field is empty, then increase by the fling amount
+            edtDollar.setText(FLING_AMT.toString());
+            convertMoney(FLING_AMT.toString());
+        }
+    }
+
+    private void decreaseDollar(Double decreaseAmount){
+        // grab the current value in the edittext field
+        String amount = edtDollar.getText().toString();
+
+        // check if the edittext field is empty
+        if (!amount.equals("")){
+            // convert string to double
+            Double usd = Double.parseDouble(amount);
+            if (usd > 0){
+                // decrease value
+                usd -= decreaseAmount;
+                usd = Math.round((usd)*100.0)/100.0;
+                // set the new dollar amount in the edittext
+                edtDollar.setText(Double.toString(usd));
+                // call conversion to update the other currencies
+                convertMoney(Double.toString(usd));
+
+                // recheck if the amount went negative
+                if (Double.parseDouble(edtDollar.getText().toString()) < 0){
+                    setDollarZero();
+                }
+            }
+            else {
+                // if value is zero or negative, then ensure it stays at zero
+                setDollarZero();
+            }
+        }
+    }
+
+    private void setDollarZero(){
+        edtDollar.setText("0.0");
+        convertMoney("0");
     }
 
 

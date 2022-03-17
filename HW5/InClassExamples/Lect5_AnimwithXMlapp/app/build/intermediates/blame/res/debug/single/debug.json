@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_happy_monkey.png.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\drawable-xhdpi\\happy_monkey.png"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim-an-rES_blink.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim-an-rES\\blink.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_move.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\move.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_zoom_out.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\zoom_out.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_zoom_in.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\zoom_in.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_out.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim-fr_flip.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim-fr\\flip.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_blink.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\blink.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim-ar_together.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim-ar\\together.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_rotate.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\rotate.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_together.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\together.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim-de_bounce.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim-de\\bounce.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_bounce.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\bounce.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim-land_rotate.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim-land\\rotate.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_down.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\slide_down.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_sequential.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\sequential.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_flip.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\flip.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_autorenew_24.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\drawable\\ic_baseline_autorenew_24.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim-el_rotate.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim-el\\rotate.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_in.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_up.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\slide_up.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\anim_wav_scale2.xml.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\anim\\wav_scale2.xml"
+    },
+    {
+        "merged": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "C:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect5_AnimwithXMlapp\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    }
+]

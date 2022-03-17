@@ -30,7 +30,8 @@
                 android:layout_marginTop="40dip"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/euro"
-                android:textAlignment="gravity" />
+                android:textAlignment="gravity"
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow
@@ -52,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dip"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="@string/yen" />
+                android:text="@string/yen"
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow
@@ -74,7 +76,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dip"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="@string/cad" />
+                android:text="@string/cad"
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow
@@ -98,7 +101,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dip"
-                android:text="@string/usd" />
+                android:text="@string/usd"
+                android:textSize="24sp" />
         </TableRow>
     </TableLayout>
 
