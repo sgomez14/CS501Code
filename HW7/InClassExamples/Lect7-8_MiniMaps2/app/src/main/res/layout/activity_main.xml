@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.sse.minimaps.MainActivity">
+
+    <EditText
+        android:id="@+id/edtLocation"
+        style="@android:style/Widget.DeviceDefault.Light.EditText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/OneSilberWay" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show on Map"
+        android:id="@+id/btnShowOnMap"
+        android:layout_below="@+id/edtLocation"
+        android:layout_toStartOf="@+id/btnAnimate" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get From Contacts"
+        android:id="@+id/btnGetFromContacts"
+        android:layout_above="@+id/btnActuallyCallMom"
+        android:layout_alignStart="@+id/edtMomsPhoneNo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animate"
+        android:id="@+id/btnAnimate"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imgComic"
+        android:layout_below="@+id/btnAnimate"
+        android:layout_gravity="center"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/spidermansaddiction" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call Mom"
+        android:id="@+id/btnCallMom"
+        android:layout_below="@+id/btnShowOnMap"
+        android:layout_alignStart="@+id/btnShowOnMap" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actually Call Mom"
+        android:id="@+id/btnActuallyCallMom"
+        android:layout_below="@+id/btnShowOnMap"
+        android:layout_alignEnd="@+id/btnAnimate"
+        android:layout_toEndOf="@+id/btnCallMom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mom&apos;s Phone #"
+        android:id="@+id/textView"
+        android:layout_alignBottom="@+id/edtMomsPhoneNo"
+        android:layout_alignStart="@+id/btnCallMom" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtMomsPhoneNo"
+        android:layout_above="@+id/btnAnimate"
+        android:layout_toEndOf="@+id/textView"
+        android:text="16173582367"
+        android:layout_centerInParent="true"
+        android:gravity="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMS Mom"
+        android:id="@+id/btnSMSMom"
+        android:layout_above="@+id/btnSMSManagerMom"
+        android:layout_toEndOf="@+id/btnActuallyCallMom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMSManager Mom"
+        android:id="@+id/btnSMSManagerMom"
+        android:layout_below="@+id/btnActuallyCallMom"
+        android:layout_alignStart="@+id/textView"
+        android:onClick="onTestClick" />
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">W7_P3</string>
+    <string-array name="episodes">
+        <item>Spock\'s Brain</item>
+        <item>Arena</item>
+        <item>This Side of Paradise</item>
+        <item>Mirror, Mirror</item>
+        <item>Plato\'s Step Children</item>
+        <item>The Naked Time</item>
+        <item>The Trouble With Tribbles</item>
+    </string-array>
+
+    <string-array name="episode_descriptions">
+        <item>Some people in swimsuits steal Spock\'s Brain. Hmm...</item>
+        <item>Captain Kirk fights a plastic 3D Molded lizard.</item>
+        <item>A flower explodes in Spock\'s face and makes him happy. </item>
+        <item>Alternative Universe</item>
+        <item>Captain Kirk and Spock play dress up.</item>
+        <item>Sulu goes nuts.</item>
+        <item>So cute!!</item>
+    </string-array>
+
+    <string-array name="episode_urls">
+        <item>http://www.letswatchstartrek.com/2013/07/23/tos-spocks-brain/</item>
+        <item>http://www.letswatchstartrek.com/2012/11/19/tos-arena/</item>
+        <item>http://www.letswatchstartrek.com/2012/12/19/22-3-tos-this-side-of-paradise/</item>
+        <item>http://www.letswatchstartrek.com/2013/01/28/04-tos-mirror-mirror/</item>
+        <item>http://www.letswatchstartrek.com/2013/10/07/tos-platos-stepchildren/</item>
+        <item>http://www.letswatchstartrek.com/2012/08/13/04-tos-the-naked-time/</item>
+        <item>http://www.letswatchstartrek.com/2013/04/16/tos-the-trouble-with-tribbles/</item>
+    </string-array>
+
+
+</resources>

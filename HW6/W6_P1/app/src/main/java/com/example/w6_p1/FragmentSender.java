@@ -43,7 +43,6 @@ public class FragmentSender extends Fragment {
         // Required empty public constructor
     }
 
-
     public interface FragmentSenderListener{
         public void selectionMade(String msg);
     }
@@ -56,7 +55,6 @@ public class FragmentSender extends Fragment {
         super.onAttach(context);
         FSL = (FragmentSenderListener) context;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

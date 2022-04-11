@@ -1,0 +1,4 @@
+#Tue Mar 29 16:03:45 EDT 2022
+base.0=C\:\\TRANSFER\\Dropbox\\AndroidStudio\\Core\\Lect7_FragTranWork\\FragTranWork\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FragTranWork</string>
+    <string name="add_frag">Add Fragment</string>
+    <string name="remove_frag">Remove Fragment</string>
+
+</resources>
